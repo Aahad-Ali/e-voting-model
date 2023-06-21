@@ -25,15 +25,15 @@ app.use(
   })
 );
 
-let productSchema = new mongoose.Schema({
-  productName: { type: String, required: true  },
-  category: { type: String, required: true  },
-  description: { type: String, required: true },
-  unit: { type: String, required: true },
-  price: { type: Number, required: true },
-  createdOn: { type: Date, default: Date.now },
-});
-const productModel = mongoose.model("products", productSchema);
+// let productSchema = new mongoose.Schema({
+//   productName: { type: String, required: true  },
+//   category: { type: String, required: true  },
+//   description: { type: String, required: true },
+//   unit: { type: String, required: true },
+//   price: { type: Number, required: true },
+//   createdOn: { type: Date, default: Date.now },
+// });
+// const productModel = mongoose.model("products", productSchema);
 
 const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
@@ -52,7 +52,7 @@ app.post("/api/v1/signup", (req, res) => {
       `required fields missing, request example: 
                 {
                     "firstName": "John",
-                    "contact": "03447746207",
+                    "contact": "0311223344",
                     "email": "abc@abc.com",
                     "password": "12345"
                 }`
@@ -110,13 +110,14 @@ app.post("/api/v1/login", (req, res) => {
   let body = req.body;
   body.email = body.email.toLowerCase();
 
-  if (!body.email || !body.password) {
-    // null check - undefined, "", 0 , false, null , NaN
+  if (!body.email || !body.password ) {
+    // null check - undefined, "", 0 , false, null , NaN    || !body.folio   "folio": "1122334455"
     res.status(400).send(
       `required fields missing, request example: 
                 {
                     "email": "abc@abc.com",
                     "password": "12345"
+                    
                 }`
     );
     return;

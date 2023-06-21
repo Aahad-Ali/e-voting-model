@@ -1,0 +1,33 @@
+
+.accordion-container{
+  display: grid;
+  grid-template-columns: 20rem 1fr 1fr;
+  gap: 10rem;
+}
+
+.accordion-container .artical{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+
+
+
+
+
+@media screen and  (max-width: 1024px) {
+    .accordion-container{
+       
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+}
+@media screen and  (max-width: 768px) {
+    .accordion-container{
+       
+        grid-template-columns: 1fr ;
+        gap: 5rem;
+      }
+}

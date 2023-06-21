@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { GlobalContext } from "../context/context";
-import { Button, TextField } from "@mui/material";
+import Button from '@mui/material/Button';
+
 
 import "./login.css";
 import axios from "axios";
@@ -62,8 +63,8 @@ function Login() {
         <div className="row">
           <div className="col">
             {/* <h4>This is Login page</h4> */}
-            <h1 className="login-heading">SAYLANI WELFARE</h1>
-            <h4 className="discount">ONLINE DISCOUNT STORE</h4>
+            <h1 className="login-heading">E-VOTING </h1>
+            <h4 className="discount">IQBAL PROJECT</h4>
             {state.text}
             {/* 
       <form onSubmit={loginHandler} className="loginForm">
@@ -136,10 +137,25 @@ function Login() {
                   }}
                 />
               </div>
+              {/* <div className="mb-3">
+                <label htmlFor="exampleInputFolio" className="form-label">
+                  |Folio 
+                </label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="exampleInputPassword2"
+                  
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  />
+              </div> */}
 
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
+              {/* <button type="submit" className="btn btn-primary">
+                Login
+              </button> */}
+              <Button variant="contained" type="submit" >Login</Button>
             </form>
           </div>
         </div>

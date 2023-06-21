@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./signup.css";
+import Button from '@mui/material/Button';
 
 // const baseUrl = "http://localhost:5001/api/v1";
 
@@ -19,7 +20,6 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [contact, setContact] = useState("");
 
-
   const signupHandler = async (e) => {
     e.preventDefault();
 
@@ -32,7 +32,7 @@ function Signup() {
       });
 
       console.log("signup successful");
-      alert("Signup Successfully")
+      alert("Signup Successfully");
       setResult("signup successful");
     } catch (e) {
       console.log("e: ", e);
@@ -43,9 +43,9 @@ function Signup() {
 
   return (
     <div className="container signup-page">
-      <h1 className="login-heading">SAYLANI WELFARE</h1>
-            <h4 className="discount">ONLINE DISCOUNT STORE</h4>
-      <form onSubmit={signupHandler}>
+      <h1 className="login-heading">E-VOTING</h1>
+      <h4 className="discount">IQBAL PROJECT</h4>
+      <form onSubmit={signupHandler} className="form-container">
         <div className="input-group mb-3">
           <input
             type="text"
@@ -103,7 +103,10 @@ function Signup() {
           /> */}
         </div>
         <div>
-          <button type="submit" className="btn btn-primary">Signup</button>
+          {/* <button type="submit" className="btn btn-primary">
+            Signup
+          </button> */}
+          <Button variant="contained" type="submit" >Signup</Button>
         </div>
       </form>
 
